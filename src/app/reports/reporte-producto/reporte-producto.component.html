@@ -1,0 +1,45 @@
+<div class="container">
+    <h1 style="color: #f8f9fa;">Reporte de Productos</h1>
+  
+    <div class="filters">
+      <div class="filter">
+        <label for="subcategoria" style="color: #f8f9fa;">Filtrar por Subcategoría:</label>
+        <select id="subcategoria" [(ngModel)]="selectedSubcategoria" (change)="filtrarPorSubcategoria()" class="form-control" style="background-color: #495057; color: #f8f9fa;">
+          <option value="">Todas</option>
+          <option *ngFor="let subcategoria of subcategorias" [value]="subcategoria" style="background-color: #495057;">{{ subcategoria }}</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="stock" style="color: #f8f9fa;">Filtrar por Stock Bajo (menor o igual a):</label>
+        <input type="number" id="stock" [(ngModel)]="stockMinimo" (change)="filtrarPorStockBajo()" class="form-control" style="background-color: #495057; color: #f8f9fa;">
+      </div>
+    </div>
+  
+    <div class="actions">
+      <button (click)="imprimirPDF()" class="btn btn-primary" style="background-color: #007bff;">Descargar PDF</button>
+      <button (click)="exportarExcel()" class="btn btn-danger" style="background-color: #dc3545;">Exportar a Excel</button>
+      <button (click)="imprimir()" class="btn btn-primary" style="background-color: #007bff;">Imprimir</button>
+    </div>
+  
+    <div class="productos" id="section-to-print">
+      <table class="table" style="background-color: #495057; color: #f8f9fa;">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <td>{{ producto.nombre_producto }}</td>
+            <td>{{ producto.descripcion_producto }}</td>
+            <td>{{ producto.precio_producto }}</td>
+            <td>{{ producto.stock }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

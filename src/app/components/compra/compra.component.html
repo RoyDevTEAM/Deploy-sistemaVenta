@@ -1,0 +1,44 @@
+<div class="container mt-4" style="color: #f8f9fa; background-color: #343a40; padding: 20px; border-radius: 10px;">
+    <h2>Registrar Compra</h2>
+    <form [formGroup]="compraForm" (ngSubmit)="procesarCompra()">
+      <div class="row mb-3">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Buscar proveedor..." id="busquedaProveedor" formControlName="proveedor" autocomplete="off">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" placeholder="Precio" formControlName="precio">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Descripción" formControlName="descripcion">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary">Procesar Compra</button>
+          <button type="button" class="btn btn-danger ml-2" (click)="mostrarProveedorSeleccionado()">Agregar Proveedor</button>
+        </div>
+      </div>
+  
+      <!-- Proveedor seleccionado -->
+      <div *ngIf="proveedorSeleccionado" class="mb-3">
+        <h4>Datos del Proveedor</h4>
+        <table class="table" style="background-color: #495057; border-color: #dee2e6;">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Contacto</th>
+              <th>Teléfono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ proveedorSeleccionado.nombre_proveedor }}</td>
+              <td>{{ proveedorSeleccionado.contacto_proveedor }}</td>
+              <td>{{ proveedorSeleccionado.telefono_proveedor }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+  

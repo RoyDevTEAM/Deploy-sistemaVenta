@@ -1,0 +1,20 @@
+.metodos-pago-container {
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 20px auto; /* Centra el contenedor horizontalmente y añade espacio superior e inferior */
+    padding: 20px;
+    border: 1px solid #ccc; /* Añade un borde para mayor definición */
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    background-color: #f9f9f9; /* Color de fondo */
+  }
+  
+  /* Estilos adicionales según sea necesario */
+  .metodos-pago-container h2 {
+    margin-bottom: 20px; /* Espacio inferior entre el título y el gráfico */
+  }
+  
+  #metodosPagoChart {
+    height: 400px; /* Altura del gráfico */
+    width: 100%; /* Ajusta el ancho del gráfico al contenedor */
+  }
+  

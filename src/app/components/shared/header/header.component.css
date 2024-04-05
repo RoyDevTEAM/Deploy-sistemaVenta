@@ -1,0 +1,83 @@
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  position: fixed;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding-top: 60px;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  max-width: 50%;
+  height: 200px;
+}
+
+.sidebar .panel-info {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.sidebar .menu {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.sidebar .menu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #454d55;
+  transition: all 0.3s;
+}
+
+.sidebar .menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .menu li a:hover {
+  background-color: #454d55;
+  transform: scale(1.05);
+}
+
+.sidebar .logout {
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #454d55;
+  color: #fff;
+}
+
+.sidebar .logout a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .logout a:hover {
+  text-decoration: underline;
+}
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+
+
+@media screen and (min-width: 769px) {
+  .hamburger {
+    display: none; /* Oculta el botón hamburguesa en pantallas más grandes */
+  }
+}

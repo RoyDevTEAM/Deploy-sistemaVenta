@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-div {
+  width: 90%; /* Ajuste para dispositivos móviles */
+  max-width: 450px; /* Ancho máximo */
+  height: 605px;
+  padding: 60px 35px 35px 35px;
+  border-radius: 40px;
+  background-color: rgba(140, 136, 132, 0.9);
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.logo img {
+  width: 180px;
+  border-radius: 50%;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  padding-top: 24px;
+  letter-spacing: 0.5px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 16px;
+  padding-top: 7px;
+  letter-spacing: 3px;
+  font-family: Trebuchet, sans-serif;
+}
+
+.fields {
+  width: 100%;
+  padding: 30px 5px 5px 5px;
+}
+
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.856);
+  padding: 20px 10px 20px 5px;
+}
+
+.username,
+.password {
+  margin-bottom: 30px;
+  border-radius: 25px;
+  border: 2px solid black;
+  box-shadow: inset 1px 1px 1px #422516, inset -1px -1px 1px #422516;
+  padding-left: 100px;
+}
+
+.signin-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  color: #d5cece;
+  text-align: center;
+  background-color: #894f2b;
+  transition: all 0.5s;
+  margin-top: 15px;
+}
+
+.error-message {
+  color: rgb(153, 37, 37);
+  margin-top: -15px;
+}
+
+.link {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.link a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 15px;
+}
+
+.page-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-image: url('https://cdn.leonardo.ai/users/a9f2bf5e-2e6b-46e1-91f6-90e8d45f71c0/generations/9e73436c-15d4-441c-bc2b-f72efc5a95e9/Default_Create_a_background_image_for_the_login_of_the_sales_s_1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.form-group {
+  position: relative;
+}

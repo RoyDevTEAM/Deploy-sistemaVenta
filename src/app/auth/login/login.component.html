@@ -1,0 +1,39 @@
+<div class="page-container">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="login-div">
+          <div class="logo">
+            <img src="https://www.raymandesign.com/wp-content/grand-media/image/logo_tdb.png" alt="Logo">
+          </div>
+          <h3 class="title">Inicio de Sesión</h3>
+          <p class="sub-title">Ingrese sus credenciales para iniciar sesión</p>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="fields">
+              <div class="form-group">
+                <input type="email" class="form-control username" id="email" formControlName="email"
+                  placeholder="Correo Electrónico">
+                <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger" class="error-message">
+                  <div *ngIf="loginForm.get('email')?.errors?.['required']">El correo electrónico es requerido</div>
+
+                  <div *ngIf="loginForm.get('email')?.errors?.['email']">El correo electrónico no es válido</div>
+
+                </div>
+              
+                <input type="password" class="form-control password" id="password" formControlName="password"
+                  placeholder="Contraseña">
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                  class="error-password">
+                  <div *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es requerida</div>
+
+                </div>
+                <button type="submit" class="signin-button">Iniciar Sesión</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

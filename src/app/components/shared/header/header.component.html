@@ -1,0 +1,60 @@
+<div class="sidebar">
+  <div class="logo">
+    <img src="https://www.raymandesign.com/wp-content/grand-media/image/logo_tdb.png" alt="Logo de la Empresa" style="max-width: 100%;">
+  </div>
+  <div class="panel-info">Panel de Administración</div>
+  <ul class="menu">
+    <li *ngIf="isAdmin" class="nav-item">
+      <a class="nav-link" routerLink="/cliente">
+        <i class="fas fa-users"></i> Clientes
+      </a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item">
+      <a class="nav-link" routerLink="/usuario">
+        <i class="fas fa-user"></i> Usuarios
+      </a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item">
+      <a class="nav-link" routerLink="/producto">
+        <i class="fas fa-box"></i> Productos
+      </a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item">
+      <a class="nav-link" routerLink="/dashboard">
+        <i class="fas fa-chart-bar"></i> Dashboard
+      </a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item">
+      <a class="nav-link" routerLink="/proveedores">
+        <i class="fas fa-truck"></i> Proveedores
+      </a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item">
+      <a class="nav-link" routerLink="/reporte">
+        <i class="fas fa-file-alt"></i> Reportes
+      </a>
+    </li>
+    <li *ngIf="isSeller" class="nav-item">
+      <a class="nav-link" routerLink="/venta">
+        <i class="fas fa-money-bill-wave"></i> Vender
+      </a>
+    </li>
+    <li *ngIf="isSeller" class="nav-item">
+      <a class="nav-link" routerLink="/compra">
+        <i class="fas fa-money-bill-wave"></i> Comprar
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/acerca-de">
+        <i class="fas fa-info-circle"></i> Acerca de
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+        <span class="username" *ngIf="isLoggedIn">({{ userName }})</span>
+      </a>
+    </li>
+  </ul>
+  <div class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></div>
+</div>

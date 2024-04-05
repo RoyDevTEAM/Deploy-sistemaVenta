@@ -1,0 +1,88 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #343a40; /* Gris oscuro */
+  color: #f8f9fa; /* Blanco suave */
+  padding-top: 20px;
+}
+
+.container {
+  background: #495057; /* Gris oscuro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h2,h3 {
+  color: #f8f9fa; /* Blanco suave */
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #f8f9fa; /* Blanco suave */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Azul */
+  border-color: #007bff; /* Azul */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Rojo */
+  border-color: #dc3545; /* Rojo */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.company-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.company-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.company-info p {
+  color: #495057; /* Gris oscuro para contraste con el fondo blanco */
+  margin-bottom: 5px;
+}
+
+.edit-delete-buttons button {
+  color: #ffffff; /* Blanco para que sea visible en los botones azul y rojo */
+}
+h2,h3{
+color: #ffffff; /* Blanco para que sea visible en los botones azul y rojo */
+
+}
+.fa {
+  margin-right: 10px;
+  color: #007bff; /* Azul */
+}
+
+.edit-delete-buttons {
+  margin-top: 10px;
+}
+
+/* Alineación del formulario a la izquierda y la tarjeta a la derecha */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-md-6 {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 20px;
+}

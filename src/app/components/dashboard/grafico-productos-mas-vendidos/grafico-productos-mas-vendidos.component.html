@@ -1,0 +1,11 @@
+<div style="text-align: center;">
+  <h2>Productos Más Vendidos</h2>
+  <div *ngIf="productosPopulares && productosPopulares.length > 0; else noData">
+    <div style="width: 400px; height: 400px;">
+      <canvas id="myChart"></canvas> <!-- Cambia el id a 'myChart' -->
+    </div>
+  </div>
+  <ng-template #noData>
+    <p>No hay datos disponibles.</p>
+  </ng-template>
+</div>

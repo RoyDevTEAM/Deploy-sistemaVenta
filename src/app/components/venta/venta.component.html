@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+<div class="container mt-4" style="color: #f8f9fa; background-color: #343a40; padding: 20px; border-radius: 10px;">
+  <h2>Registrar Venta</h2>
+  <form [formGroup]="ventaForm" (ngSubmit)="procesarVenta()">
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Buscar cliente..." id="busquedaCliente" formControlName="cliente" autocomplete="off">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Buscar producto..." id="busquedaProducto" formControlName="producto" autocomplete="off">
+      </div>
+      <div class="col">
+        <input type="number" class="form-control" placeholder="Cantidad" formControlName="cantidad">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-primary" (click)="agregarAlCarrito()">Agregar al carrito</button>
+        <button type="button" class="btn btn-danger ml-2" (click)="mostrarClienteSeleccionado()">Agregar Cliente</button>
+      </div>
+    </div>
+
+    <!-- Cliente seleccionado -->
+    <div *ngIf="clienteSeleccionado" class="mb-3">
+      <h4>Datos del Cliente</h4>
+      <table class="table" style="background-color: #495057; border-color: #dee2e6;">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ clienteSeleccionado.nombre_cliente }}</td>
+            <td>{{ clienteSeleccionado.direccion }}</td>
+            <td>{{ clienteSeleccionado.telefono }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Carrito de compras -->
+    <div class="card" style="background-color: #343a40; border-color: #dee2e6; color:#dee2e6">
+      <div class="card-header" (click)="alternarVisibilidadCarrito()" style="cursor: pointer;">
+        Carrito de compras
+      </div>
+      <div class="card-body" *ngIf="mostrarCarrito">
+        <table class="table" style="color: #f8f9fa;" *ngIf="carrito.length > 0">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Pre_uni</th>
+              <th>Subtotal</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of carrito">
+              <td>{{ item.producto.nombre_producto }}</td>
+              <td>{{ item.cantidad }}</td>
+              <td>{{ item.producto.precio_producto }}</td>
+              <td>{{ item.producto.precio_producto * item.cantidad }}</td>
+              <td>
+                <button type="button" class="btn btn-secondary" (click)="eliminarDelCarrito(item.producto)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p *ngIf="carrito.length === 0">El carrito está vacío.</p>
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-warning" (click)="vaciarCarrito()" style="background-color:#dc3545; border-color: #dc3545; color:#dee2e6">Vaciar carrito</button>
+          <div>
+            <strong class="texto-blanco">Subtotal:</strong> {{ subtotal }}
+          </div>
+          <div>
+            <strong class="texto-blanco">Total:</strong> {{ total }}
+          </div>
+        </div>
+        <div class="mt-3">
+          <label for="tipoPago" class="texto-blanco">Tipo de Pago</label>
+          <select class="form-control" id="tipoPago" formControlName="tipoPago">
+            <option value="contado">Contado</option>
+            <option value="credito">Crédito</option>
+          </select>
+        </div>
+    
+  <!-- Formulario de pago a crédito -->
+<div *ngIf="mostrarFormularioCredito()">
+  <div class="form-group mt-3">
+    <label for="montoInicial">Monto inicial:</label>
+    <input type="text" class="form-control" id="montoInicial" placeholder="Ingrese el monto inicial" formControlName="montoInicial">
+  </div>
+  <div class="form-group">
+    <label for="numeroCuotas">Número de cuotas:</label>
+    <input type="text" class="form-control" id="numeroCuotas" placeholder="Ingrese el número de cuotas" formControlName="numeroCuotas">
+  </div>
+  <div class="form-group">
+    <label for="interes">Interés (%):</label>
+    <input type="text" class="form-control" id="interes" placeholder="Ingrese el interés" formControlName="interes">
+  </div>
+</div>
+
+        
+<button type="submit" class="btn btn-success mt-3" (click)="mostrarAlertaVentaExitosa()">Procesar Venta</button>
+
+<!-- Ventana de alerta -->
+<div *ngIf="ventaExitosa" class="alert alert-success alert-dismissible fade show text-center" role="alert" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; padding: 30px; height: auto;">
+  <strong style="font-size: 24px;">Venta exitosa!</strong> <!-- Texto de la alerta -->
+  <br> <!-- Salto de línea para colocar el icono debajo del texto -->
+  <i class="fas fa-check-circle" style="font-size: 96px; color: #28a745;"></i> <!-- Icono de "bien" -->
+  <br> <!-- Salto de línea para colocar el botón debajo del icono -->
+  <button type="button" class="btn btn-primary mt-3" (click)="cerrarAlertaYCarrito()">Okey</button>
+
+
+</div>
+
+
+
+
+      </div>
+    </div>
+  </form>
+</div>

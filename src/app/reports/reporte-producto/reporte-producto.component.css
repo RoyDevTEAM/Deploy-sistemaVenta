@@ -1,0 +1,48 @@
+.container {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .filter {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .actions {
+    margin-bottom: 20px;
+  }
+  
+  .productos table {
+    width: 100%;
+  }
+  
+  .productos th,
+  .productos td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+  }
+  
+  .productos th {
+    background-color: #495057;
+    color: #f8f9fa;
+  }
+  
+  .productos tbody tr:nth-child(even) {
+    background-color: #dee2e6;
+  }
+  
+  @media (max-width: 768px) {
+    .filter {
+      flex: 1 0 100%;
+      margin-right: 0;
+    }
+  }
+  

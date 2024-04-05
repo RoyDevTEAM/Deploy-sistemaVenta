@@ -1,0 +1,130 @@
+<div class="container mt-5" style="color: #f8f9fa; background-color: #343a40; padding: 20px; border-radius: 10px;">
+    <h2 class="text-white mb-4">Productos</h2>
+
+    <!-- Barra de búsqueda -->
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar productos..." [(ngModel)]="terminoBusqueda" (input)="buscarProductos(terminoBusqueda)">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="limpiarBusqueda()">Limpiar</button>
+        </div>
+    </div>
+
+    <!-- Botón para mostrar/ocultar formulario de agregar producto -->
+    <button type="button" class="btn btn-primary mb-4" (click)="toggleFormularioAgregarProducto()">
+        {{ mostrarFormulario ? 'Ocultar Formulario' : 'Agregar Producto' }}
+    </button>
+
+    <!-- Formulario de edición/agregación de producto -->
+    <form [formGroup]="productoForm" (ngSubmit)="guardarCambiosProducto()" *ngIf="mostrarFormulario" class="formulario-producto">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre_producto" required>
+                    <div *ngIf="productoForm.get('nombre_producto')?.invalid && (productoForm.get('nombre_producto')?.dirty || productoForm.get('nombre_producto')?.touched)" class="alert alert-danger mt-2">
+                        El nombre del producto es requerido.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control" id="precio" formControlName="precio_producto" required>
+                    <div *ngIf="productoForm.get('precio_producto')?.invalid && (productoForm.get('precio_producto')?.dirty || productoForm.get('precio_producto')?.touched)" class="alert alert-danger mt-2">
+                        El precio del producto es requerido.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea class="form-control" id="descripcion" formControlName="descripcion_producto" required></textarea>
+                    <div *ngIf="productoForm.get('descripcion_producto')?.invalid && (productoForm.get('descripcion_producto')?.dirty || productoForm.get('descripcion_producto')?.touched)" class="alert alert-danger mt-2">
+                        La descripción del producto es requerida.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="number" class="form-control" id="stock" formControlName="stock" required>
+                    <div *ngIf="productoForm.get('stock')?.invalid && (productoForm.get('stock')?.dirty || productoForm.get('stock')?.touched)" class="alert alert-danger mt-2">
+                        El stock del producto es requerido.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="subcategoria">Subcategoría</label>
+                    <select class="form-control" id="subcategoria" formControlName="id_subcategoria" required>
+                        <option *ngFor="let subcategoria of subcategorias" [value]="subcategoria.id_subcategoria">{{ subcategoria.nombre_subcategoria }}</option>
+                    </select>
+                    <div *ngIf="productoForm.get('id_subcategoria')?.invalid && (productoForm.get('id_subcategoria')?.dirty || productoForm.get('id_subcategoria')?.touched)" class="alert alert-danger mt-2">
+                        La subcategoría del producto es requerida.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="unidad_medida">Unidad de Medida</label>
+                    <select class="form-control" id="unidad_medida" formControlName="id_unidad_medida" required>
+                        <option *ngFor="let medida of medidas" [value]="medida.id_unidad_medida">{{ medida.nombre_medida }}</option>
+                    </select>
+                    <div *ngIf="productoForm.get('id_unidad_medida')?.invalid && (productoForm.get('id_unidad_medida')?.dirty || productoForm.get('id_unidad_medida')?.touched)" class="alert alert-danger mt-2">
+                        La unidad de medida del producto es requerida.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">{{ modoEdicion ? 'Guardar Cambios' : 'Agregar' }}</button>
+            <!-- Botón de Cancelar en modo edición -->
+            <button type="button" class="btn btn-secondary ml-2" *ngIf="modoEdicion" (click)="cancelarEdicion()">Cancelar</button>
+        </div>
+    </form>
+
+    <!-- Tabla de productos -->
+    <div class="table-responsive">
+        <table class="table" style="background-color: #343a40; border-color: #dee2e6; color:#dee2e6">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Subcategoría</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se iteran los productos -->
+                <tr *ngFor="let producto of productosFiltrados.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)">
+                    <td>{{ producto.nombre_producto }}</td>
+                    <td>{{ producto.precio_producto }}</td>
+                    <td>{{ producto.descripcion_producto }}</td>
+                    <td>{{ producto.stock }}</td>
+                    <td>{{ producto.nombre_subcategoria }}</td>
+                    <td>
+                        <!-- Botones para editar y eliminar producto -->
+                        <button type="button" class="btn btn-danger ml-2" (click)="editarProducto(producto)">
+                            Editar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginación -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item" *ngFor="let page of totalPages" [class.active]="currentPage === page">
+                <a class="page-link" (click)="cambiarPagina(page)">{{ page }}</a>
+            </li>
+        </ul>
+    </nav>
+</div>

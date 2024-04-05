@@ -1,0 +1,239 @@
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  position: fixed;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding-top: 60px;
+  transition: width 0.3s; /* Agregamos transición para el cambio de ancho */
+}
+
+.sidebar.closed {
+  width: 0; /* Ocultamos la barra lateral cuando está cerrada */
+  
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  max-width: 50%;
+  height: 150px;
+}
+
+.sidebar .panel-info {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.sidebar .menu {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.sidebar .menu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #454d55;
+  transition: all 0.3s;
+}
+
+.sidebar .menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .menu li a:hover {
+  background-color: #454d55;
+  transform: scale(1.05);
+}
+
+.sidebar .logout {
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #454d55;
+  color: #fff;
+}
+
+.sidebar .logout a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar .logout a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  margin-left: 250px; /* Ancho del menú lateral */
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 0; /* Ocultamos la barra lateral por defecto */
+    overflow-x: hidden; /* Ocultamos el desbordamiento en pantallas pequeñas */
+  }
+
+  .sidebar.open {
+    width: 250px; /* Mostramos la barra lateral cuando está abierta */
+  }
+
+  .sidebar .menu li {
+    border-bottom: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 60px; /* Altura del menú lateral */
+  }
+}
+.main-content {
+  padding: 20px;
+  background-color: #f4f7fa; /* Fondo claro para el contenido principal */
+}
+
+.card {
+  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad */
+  transition: box-shadow 0.3s; /* Transición suave para el hover */
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.card-header {
+  background-color: #5b6d82; /* Color más oscuro para el encabezado */
+  color: #fff;
+  padding: 10px;
+}
+
+.card-body {
+  padding: 20px;
+  color: #333; /* Texto oscuro para el contenido */
+}
+
+.list-group-item {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  transition: background-color 0.3s; /* Transición suave para el hover en la lista */
+}
+
+.list-group-item:hover {
+  background-color: #e2e6ea; /* Color más oscuro al pasar el mouse */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los elementos de la fila se ajusten */
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: block !important; /* Mostrar el menú lateral en pantallas grandes */
+  }
+  
+  .navbar {
+    display: none; /* Ocultar el menú superior en pantallas grandes */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    display: none !important; /* Ocultar el menú lateral en pantallas pequeñas */
+  }
+  
+  .navbar {
+    display: block; /* Mostrar el menú superior en pantallas pequeñas */
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 0; /* Ocultamos la barra lateral por defecto */
+    overflow-x: hidden; /* Ocultamos el desbordamiento en pantallas pequeñas */
+  }
+
+  .sidebar.open {
+    width: 250px; /* Mostramos la barra lateral cuando está abierta */
+  }
+
+  .sidebar .menu li {
+    border-bottom: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 60px; /* Altura del menú lateral */
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  /* Ajustar el ancho del menú desplegable */
+  width: 200px; /* Puedes ajustar este valor según tus necesidades */
+  background-color: #343a40;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none; /* Inicialmente oculto */
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #454d55;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #454d55;
+}
+
+.show {
+  display: block; /* Mostrar el menú cuando la clase 'show' está presente */
+}
+

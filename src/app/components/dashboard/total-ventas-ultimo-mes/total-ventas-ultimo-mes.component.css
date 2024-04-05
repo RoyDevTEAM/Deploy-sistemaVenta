@@ -1,0 +1,55 @@
+.total-ventas-container {
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px;
+    border: 1px solid #ccc; /* Añade un borde para mayor definición */
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    background-color: #f9f9f9; /* Color de fondo */
+  }
+  
+  /* Estilos adicionales según sea necesario */
+  .total-ventas-container h2 {
+    margin-bottom: 20px; /* Espacio inferior entre el título y el gráfico */
+  }
+  
+  #chartContainer {
+    height: 400px; /* Altura del gráfico */
+  }
+v.total-ventas-container {
+  width: 100%;
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px;
+  border: 1px solid #ccc; /* Añade un borde para mayor definición */
+  border-radius: 8px; /* Añade esquinas redondeadas */
+  background-color: #f9f9f9; /* Color de fondo */
+}
+
+/* Estilos adicionales según sea necesario */
+.total-ventas-container h2 {
+  margin-bottom: 20px; /* Espacio inferior entre el título y el gráfico */
+}
+
+#chartContainer {
+  height: 400px; /* Altura del gráfico */
+}
+.total-ventas-container {
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px;
+    border: 1px solid #ccc; /* Añade un borde para mayor definición */
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    background-color: #f9f9f9; /* Color de fondo */
+  }
+  
+  /* Estilos adicionales según sea necesario */
+  .total-ventas-container h2 {
+    margin-bottom: 20px; /* Espacio inferior entre el título y el gráfico */
+  }
+  
+  #chartContainer {
+    height: 400px; /* Altura del gráfico */
+  }
+    

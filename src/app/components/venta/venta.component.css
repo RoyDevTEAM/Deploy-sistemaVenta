@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #343a40; /* Fondo oscuro */
+  color: #f8f9fa; /* Texto en blanco suave */
+}
+
+.container {
+  background-color: #495057; /* Gris oscuro para el contenedor */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #f8f9fa; /* Texto en blanco suave */
+}
+
+/* Botones con colores personalizados según la paleta */
+.btn-primary {
+  background-color: #007bff; /* Azul */
+  border-color: #007bff;
+  border-radius: 20px;
+}
+
+
+
+.btn-danger {
+  background-color: #dc3545; /* Rojo */
+  border-color: #dc3545;
+  border-radius: 20px;
+}
+
+/* Estilos para la tabla acorde a la paleta */
+.table {
+  color: #f8f9fa; /* Texto en blanco suave */
+  background-color: #495057; /* Gris oscuro */
+  border-color: #dee2e6; /* Líneas de separación */
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6; /* Líneas de separación */
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-group .btn {
+  margin-right: 5px;
+  color: #f8f9fa; /* Texto en blanco suave */
+}
+
+/* Ajuste para alertas, manteniendo estilo original */
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  z-index: 1000;
+  color: #343a40; /* Texto oscuro para contraste */
+  background-color: #f8f9fa; /* Fondo blanco suave */
+}
+/* Aplica estilos directamente a todos los <strong> y <label> dentro del contenedor específico */
+.contenedor-venta strong,
+.contenedor-venta label {
+  color: #fff; /* Blanco */
+}
+
+/* Otra opción es definir una clase específica para aplicar a los <strong> y <label> */
+.texto-blanco {
+  color: #fff; /* Blanco */
+}
