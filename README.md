@@ -29,13 +29,13 @@ Para instalar y ejecutar este proyecto en tu entorno local, sigue estos pasos:
 1. **Clonar el repositorio**
    ```bash
    git clone https://github.com/RoyDevTEAM/Deploy-sistemaVenta.git
-Instalar las dependencias
+2. Instalar las dependencias
 cd Deploy-sistemaVenta
 npm install
-Iniciar el servidor local
+3. Iniciar el servidor local
 ng serve
 Colaboradores
-Josué Huayllas
-Yorbin Mier
+_Josué Huayllas
+_Yorbin Mier
 Agradecimientos
 Agradecemos a todos los que han contribuido y dado soporte a este proyecto, especialmente a nuestros profesores y colegas de la Universidad Privada Domingo Savio (UPDS).
